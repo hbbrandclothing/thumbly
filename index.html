@@ -381,6 +381,14 @@
   </div>
 </body>
 </html>
+/* Safari fallback: if blur/transparency acts weird, make cards solid */
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  .nav, .heroCard, .preview, .card {
+    background: #0f172a !important;
+  }
+}
+
+
 
 
 
