@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thumbly — Premium Thumbnails</title>
+  <meta name="description" content="Thumbly designs high-converting thumbnails. Modern, slick, and delivered fast."/>
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#0f172a;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --brand:#7c3aed;
+      --line: rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1000px 600px at 20% 10%, rgba(124,58,237,.35), transparent 60%),
+                  radial-gradient(900px 500px at 80% 20%, rgba(56,189,248,.18), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:0 auto; padding:28px 18px 70px}
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 16px;
+      background: rgba(15,23,42,.6);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      position: sticky; top: 14px; z-index: 10;
+    }
+    .logo{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px;}
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.18);
+    }
+    .navlinks{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .pill{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color: var(--muted);
+      transition: .2s ease;
+      background: rgba(15,23,42,.35);
+    }
+    .pill:hover{transform: translateY(-1px); color: var(--text)}
+    .btn{
+      border:none;
+      padding:12px 16px;
+      border-radius: 999px;
+      font-weight:750;
+      cursor:pointer;
+      transition:.2s ease;
+      color:#0b0f17;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      box-shadow: 0 10px 24px rgba(124,58,237,.25);
+    }
+    .btn:hover{transform: translateY(-1px); filter: brightness(1.02)}
+    .btn.secondary{
+      background: rgba(15,23,42,.35);
+      border:1px solid var(--line);
+      color: var(--text);
+      box-shadow:none;
+    }
+
+    .hero{
+      margin-top: 34px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr;}
+      .nav{border-radius: 18px}
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: rgba(15,23,42,.62);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+      backdrop-filter: blur(16px);
+      position: relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(600px 180px at 20% 0%, rgba(124,58,237,.25), transparent 60%),
+                  radial-gradient(500px 160px at 80% 20%, rgba(56,189,248,.18), transparent 55%);
+      pointer-events:none;
+    }
+    .heroInner{position:relative}
+    h1{font-size: 44px; line-height:1.05; margin: 2px 0 12px; letter-spacing: -.6px;}
+    @media (max-width: 520px){ h1{font-size: 36px} }
+    .sub{color: var(--muted); font-size: 16px; margin-bottom: 18px; max-width: 62ch;}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 20px}
+    .badge{
+      font-size: 13px;
+      color: var(--text);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--line);
+      padding: 9px 12px;
+      border-radius: 999px;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .fine{margin-top: 12px; color: var(--muted); font-size: 12.5px;}
+
+    .preview{
+      border:1px solid var(--line);
+      background: rgba(15,23,42,.62);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: blur(16px);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 12px;
+    }
+    .thumbMock{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        linear-gradient(135deg, rgba(124,58,237,.35), rgba(56,189,248,.15)),
+        radial-gradient(600px 260px at 15% 25%, rgba(34,197,94,.18), transparent 60%),
+        rgba(255,255,255,.04);
+      aspect-ratio: 16/9;
+      position:relative;
+      overflow:hidden;
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+    .thumbMock .label{
+      position:absolute;
+      left:14px; bottom:14px;
+      padding:10px 12px;
+      border-radius: 12px;
+      font-weight:800;
+      font-size: 14px;
+      background: rgba(11,15,23,.65);
+      border:1px solid rgba(255,255,255,.10);
+      backdrop-filter: blur(8px);
+    }
+    .thumbMock .burst{
+      position:absolute;
+      top:-60px; right:-60px;
+      width: 200px; height: 200px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.24), rgba(124,58,237,.10), transparent 70%);
+      transform: rotate(15deg);
+    }
+    .stats{display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px;}
+    .stat{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px 12px 10px;
+    }
+    .stat .k{font-weight:900; font-size: 18px}
+    .stat .t{color: var(--muted); font-size: 12px}
+
+    section{margin-top: 22px}
+    .grid{display:grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px;}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(15,23,42,.58);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      backdrop-filter: blur(16px);
+    }
+    .card h2{margin: 4px 0 8px; font-size: 18px}
+    .card p{margin: 0; color: var(--muted)}
+    .divider{height:1px; background: var(--line); margin: 18px 0}
+
+    .product{display:grid; grid-template-columns: .95fr 1.05fr; gap: 18px; align-items: start;}
+    @media (max-width: 900px){ .product{grid-template-columns: 1fr} }
+    .price{font-size: 30px; font-weight: 950; letter-spacing: -.4px; margin: 8px 0 6px;}
+    .list{margin: 12px 0 0; padding-left: 18px; color: var(--muted)}
+    .list li{margin: 7px 0}
+    .notice{
+      margin-top: 12px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer{
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    code{color:#fff}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="nav">
+      <div class="logo">
+        <span class="dot"></span>
+        <span>Thumbly</span>
+      </div>
+      <nav class="navlinks">
+        <a class="pill" href="#what">What we do</a>
+        <a class="pill" href="#store">Store</a>
+        <a class="pill" href="#faq">FAQ</a>
+        <button class="btn secondary" id="openCheckoutTop">Buy thumbnail</button>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <div class="heroCard">
+        <div class="heroInner">
+          <h1>Thumbnails that win clicks.</h1>
+          <p class="sub">
+            Thumbly designs modern, high-converting thumbnails that match your brand and make your videos stand out.
+            Clean composition, strong contrast, and a scroll-stopping look — delivered fast.
+          </p>
+
+          <div class="badges">
+            <span class="badge"><strong>24h</strong> delivery</span>
+            <span class="badge"><strong>1</strong> revision included</span>
+            <span class="badge"><strong>1080p</strong> YouTube-ready</span>
+          </div>
+
+          <div class="ctaRow">
+            <button class="btn" id="openCheckout">Get a thumbnail — £4.99</button>
+            <a class="pill" href="#store">See what’s included →</a>
+          </div>
+          <div class="fine">
+            Buy uses Stripe Checkout (if you’ve set your Stripe key). “Test purchase” works without Stripe.
+          </div>
+        </div>
+      </div>
+
+      <aside class="preview">
+        <div class="thumbMock" aria-label="Thumbnail preview mock">
+          <div class="burst"></div>
+          <div class="label">YOUR VIDEO • THUMBLY STYLE</div>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <div class="k">£4.99</div>
+            <div class="t">Flat price</div>
+          </div>
+          <div class="stat">
+            <div class="k">1</div>
+            <div class="t">Revision</div>
+          </div>
+          <div class="stat">
+            <div class="k">24h</div>
+            <div class="t">Delivery</div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="what" class="grid">
+      <div class="card">
+        <h2>What we do</h2>
+        <p>
+          We create thumbnails designed for attention — bold typography, clear focal points, and clean visual hierarchy.
+          You send your title/topic + any images you want included. We deliver a polished thumbnail tailored to your channel.
+        </p>
+        <div class="divider"></div>
+        <p>
+          Perfect for creators who want a professional look without designing every upload from scratch.
+        </p>
+      </div>
+      <div class="card">
+        <h2>How it works</h2>
+        <p>
+          1) Purchase the thumbnail. 2) We collect your title, style and assets.
+          3) You get your thumbnail within 24 hours. One revision included.
+        </p>
+        <div class="notice">
+          Tip: Send a screenshot of your channel so we can match your style instantly.
+        </div>
+      </div>
+    </section>
+
+    <section id="store" class="card" style="margin-top:18px">
+      <div class="product">
+        <div class="thumbMock" style="aspect-ratio: 16/10;">
+          <div class="burst"></div>
+          <div class="label">Pro Thumbnail</div>
+        </div>
+
+        <div>
+          <h2>Pro YouTube Thumbnail</h2>
+          <div class="price">£4.99</div>
+          <p style="color:var(--muted); margin-top:6px">
+            A single premium thumbnail designed to maximize clarity and clicks.
+          </p>
+
+          <ul class="list">
+            <li>Delivered as high-res PNG (YouTube-ready)</li>
+            <li>1 revision included</li>
+            <li>Optimized layout: clear focal point + readable text</li>
+          </ul>
+
+          <div class="ctaRow" style="margin-top:14px">
+            <button class="btn" id="buyBtn">Buy now — £4.99</button>
+            <button class="btn secondary" id="testModeBtn">Test purchase</button>
+          </div>
+
+          <div class="notice">
+            <strong style="color:#fff">Note:</strong>
+            “Buy now” needs Stripe to be set in <code>server.js</code>. “Test purchase” works immediately.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="grid">
+      <div class="card">
+        <h2>FAQ — What do you need from me?</h2>
+        <p>
+          Your video title/topic, any images you want included, and your style preference.
+          If you’re not sure, we’ll choose a clean modern look that fits your niche.
+        </p>
+      </div>
+      <div class="card">
+        <h2>FAQ — What happens after I pay?</h2>
+        <p>
+          After checkout you’ll see a confirmation page. You can then send your title + assets and we begin.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Thumbly. All rights reserved.</div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="pill" href="#what">What we do</a>
+        <a class="pill" href="#store">Store</a>
+        <a class="pill" href="#faq">FAQ</a>
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  async function goToCheckout() {
+    try {
+      const res = await fetch('/create-checkout-session', { method: 'POST' });
+      if (!res.ok) throw new Error('Checkout not configured yet. Use “Test purchase” for now.');
+      const data = await res.json();
+      if (!data.url) throw new Error('Missing checkout URL.');
+      window.location.href = data.url;
+    } catch (e) {
+      alert(e.message);
+    }
+  }
+
+  document.getElementById('openCheckout').addEventListener('click', goToCheckout);
+  document.getElementById('buyBtn').addEventListener('click', goToCheckout);
+  document.getElementById('openCheckoutTop').addEventListener('click', goToCheckout);
+
+  document.getElementById('testModeBtn').addEventListener('click', () => {
+    window.location.href = '/success.html?test=1';
+  });
+</script>
+</body>
+</html>
