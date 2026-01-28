@@ -225,7 +225,7 @@
         <a class="pill" href="#store">Store</a>
         <a class="pill" href="#faq">FAQ</a>
         <a class="btn"
-   href="https://buy.stripe.com/test_6oU7sF7vhePlgu24SVbV600"
+   href="https://buy.stripe.com/6oU7sF7vhePlgu24SVbV600"
    target="_blank"
    rel="noopener">
    Buy now — £4.99
@@ -364,30 +364,7 @@
     </footer>
 
   </div>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  async function goToCheckout() {
-    try {
-      const res = await fetch('/create-checkout-session', { method: 'POST' });
-      if (!res.ok) throw new Error('Checkout not configured yet. Use “Test purchase” for now.');
-      const data = await res.json();
-      if (!data.url) throw new Error('Missing checkout URL.');
-      window.location.href = data.url;
-    } catch (e) {
-      alert(e.message);
-    }
-  }
-
-  document.getElementById('openCheckout').addEventListener('click', goToCheckout);
-  document.getElementById('buyBtn').addEventListener('click', goToCheckout);
-  document.getElementById('openCheckoutTop').addEventListener('click', goToCheckout);
-
-  document.getElementById('testModeBtn').addEventListener('click', () => {
-    window.location.href = '/success.html?test=1';
-  });
-</script>
 </body>
 </html>
+
 
