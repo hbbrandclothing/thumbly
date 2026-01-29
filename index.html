@@ -5,6 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Thumbly — Premium Thumbnails</title>
   <meta name="description" content="Thumbly designs high-converting thumbnails. Modern, slick, and delivered fast."/>
+  /* ---------- Mobile polish ---------- */
+@media (max-width: 720px) {
+  .container { padding: 18px 14px 60px; }
+
+  /* Nav: stop it looking cramped */
+  .nav {
+    position: static;          /* sticky nav often feels weird on mobile */
+    border-radius: 16px;
+    padding: 12px 12px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .navlinks {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .pill { padding: 10px 12px; }
+
+  /* Hero: smaller headline + better spacing */
+  h1 { font-size: 34px; letter-spacing: -0.4px; }
+  .sub { font-size: 15px; }
+
+  /* Make CTAs stack nicely */
+  .ctaRow {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn, .btn.secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Preview card spacing */
+  .preview { padding: 14px; }
+  .thumbMock .label { font-size: 13px; }
+
+  /* Stats: 3 across is tight on phones */
+  .stats { grid-template-columns: 1fr; }
+  .stat .k { font-size: 16px; }
+
+  /* Grid sections: make cards feel less “tall” */
+  .card { padding: 16px; }
+}
+
+@media (max-width: 480px) {
+  /* Even tighter phones */
+  h1 { font-size: 30px; }
+  .badge { font-size: 12px; padding: 8px 10px; }
+
+  /* Product layout spacing */
+  .product { gap: 14px; }
+  .price { font-size: 26px; }
+
+  /* Reduce heavy shadow on tiny screens */
+  .heroCard, .preview, .card, .nav { box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+}
+
   <style>
     :root{
       --bg:#0b0f17;
@@ -381,6 +440,7 @@
   </div>
 </body>
 </html>
+
 
 
 
