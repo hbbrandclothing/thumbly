@@ -30,24 +30,31 @@
     }
     a{color:inherit; text-decoration:none}
     .container{max-width:1100px; margin:0 auto; padding:28px 18px 70px}
-  
-
     .nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  flex-wrap:nowrap;           /* stops the logo on a new line */
-}
-
-.navlinks{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:nowrap;           /* keeps pills + button on one row */
-}
-
-    .
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 16px;
+      background: rgba(15,23,42,.6);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      position: sticky; top: 14px; z-index: 10;
+    }
+    .logo{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.2px;}
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      box-shadow: 0 0 0 4px rgba(124,58,237,.18);
+    }
+    .navlinks{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .pill{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color: var(--muted);
+      transition: .2s ease;
+      background: rgba(15,23,42,.35);
+    }
     .pill:hover{transform: translateY(-1px); color: var(--text)}
     .btn{
       border:none;
@@ -273,41 +280,24 @@
   .nav {
     box-shadow: 0 12px 30px rgba(0,0,0,.35);
   }
-{
-  .brand img{
-  height: 12px;
-  width: auto;
-  display: block;
 }
-  /* FORCE logo size (override all) */
-.brand img,
-.logo img {
-  height: 36px !important;
-  max-height: 36px !important;
-  width: auto !important;
-}
-
-
 
   </style>
 </head>
-  <header class="nav">
-  <a class="brand" href="./" aria-label="Thumbly home">   
-  </a>
 
-  <nav class="navlinks">
-    <a class="pill" href="#what">What we do</a>
-    <a class="pill" href="#store">Store</a>
-    <a class="pill" href="#faq">FAQ</a>
-  </nav>
-</header>
+<body>
+  <div class="container">
 
-     </div>
+    <header class="nav">
+      <div class="logo">
+        <span class="dot"></span>
+        <span>Thumbly</span>
+      </div>
       <nav class="navlinks">
         <a class="pill" href="#what">What we do</a>
         <a class="pill" href="#store">Store</a>
         <a class="pill" href="#faq">FAQ</a>
-        <div style="height: 12px;"></div>
+        <div style="height: 18px;"></div>
         <a class="btn"
 
    href="https://buy.stripe.com/6oU7sF7vhePlgu24SVbV600"
@@ -422,6 +412,7 @@
             <li>1 revision included</li>
             <li>Optimized layout: clear focal point + readable text</li>
           </ul>
+
 </a>
 
         
@@ -463,6 +454,8 @@
   </div>
 </body>
 </html>
+
+
 
 
 
