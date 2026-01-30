@@ -871,7 +871,42 @@ img {
   opacity: 0.75;
 }
 
+/* === MATCH Email button to Subscribers premium pill === */
+.subscriber-support_cta .btn{
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.22),
+    rgba(255, 215, 0, 0.06)
+  ) !important;
 
+  border: 2px solid #FFD700 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.65),
+    0 0 18px rgba(255, 215, 0, 0.45),
+    0 0 36px rgba(255, 215, 0, 0.3) !important;
+
+  color: rgba(255,255,255,0.96) !important;
+  font-weight: 700 !important;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover = same premium glow boost */
+.subscriber-support_cta .btn:hover{
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.95),
+    0 0 26px rgba(255, 215, 0, 0.65),
+    0 0 52px rgba(255, 215, 0, 0.45) !important;
+}
+
+.subscriber-support_cta .btn{
+  border-radius: 999px !important;
+}
+
+  
 
 </style>
 
@@ -962,6 +997,7 @@ img {
   
 </body>
 </html>
+
 
 
 
