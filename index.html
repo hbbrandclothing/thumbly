@@ -304,7 +304,7 @@
 
 <body>
 
-  <header class="nav">
+<header class="nav">
   <a class="logo" href="./">
     <img src="thumbly-logo.png" alt="Thumbly logo">
   </a>
@@ -314,12 +314,11 @@
     <a class="pill" href="#store">Store</a>
     <a class="pill" href="#faq">FAQ</a>
 
+    <!-- ✅ Premium subscribers pill -->
+    <a class="pill pill-premium" id="sub-pill" href="#subscriber-email">👑 Subscribers</a>
+
     <a class="btn" href="https://buy.stripe.com/6oJ7SF7vhePlgu24SVD600" target="_blank" rel="noopener">
       Buy now — £4.99
-    </a>
-
-    <a class="btn btn-secondary" href="YOUR_SUBSCRIBE_LINK_HERE" target="_blank" rel="noopener">
-      Subscribe — £18.99 / month
     </a>
   </nav>
 </header>
@@ -761,6 +760,10 @@ img {
   display: block !important;
 }
 
+  #subscriber-email {
+  scroll-margin-top: 140px;
+}
+
 
 
 
@@ -834,8 +837,28 @@ img {
     </footer>
 
   </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("sub-pill");
+    const target = document.getElementById("subscriber-email");
+    if (!btn || !target) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+</script>
+
 </body>
 </html>
+
+
+  
+</body>
+</html>
+
 
 
 
