@@ -303,10 +303,27 @@
 </head>
 
 <body>
- <header class="nav">
-  <a class="logo">...</a>
-  <nav class="navlinks">...</nav>
+
+  <header class="nav">
+  <a class="logo" href="./">
+    <img src="thumbly-logo.png" alt="Thumbly logo">
+  </a>
+
+  <nav class="navlinks">
+    <a class="pill" href="#what">What we do</a>
+    <a class="pill" href="#store">Store</a>
+    <a class="pill" href="#faq">FAQ</a>
+
+    <a class="btn" href="https://buy.stripe.com/6oJ7SF7vhePlgu24SVD600" target="_blank" rel="noopener">
+      Buy now — £4.99
+    </a>
+
+    <a class="btn btn-secondary" href="YOUR_SUBSCRIBE_LINK_HERE" target="_blank" rel="noopener">
+      Subscribe — £18.99 / month
+    </a>
+  </nav>
 </header>
+
 
 
       <a class="logo" href="./">
@@ -662,6 +679,36 @@ header.nav .pill{
 }
 
 
+  header.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 18px auto 0;
+  padding: 12px 18px;
+
+  border-radius: 28px;
+}
+
+header.nav .navlinks{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header.nav .btn,
+header.nav .pill{
+  width: auto;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+
+
 </style>
 
 
@@ -729,6 +776,7 @@ header.nav .pill{
   </div>
 </body>
 </html>
+
 
 
 
