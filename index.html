@@ -315,7 +315,8 @@
     <a class="pill" href="#faq">FAQ</a>
 
     <!-- ✅ Premium subscribers pill -->
-    <a class="pill pill-premium" id="sub-pill" href="#subscriber-email">👑 Subscribers</a>
+    <a class="pill pill-premium" id="sub-pill" href="#subscriber-email">👑 Subscribers email section</a>
+
 
     <a class="btn" href="https://buy.stripe.com/6oJ7SF7vhePlgu24SVD600" target="_blank" rel="noopener">
       Buy now — £4.99
@@ -764,8 +765,37 @@ img {
   scroll-margin-top: 140px;
 }
 
+/* ===== Premium Subscribers Pill (Gold Glow) ===== */
+.pill-premium{
+  border: 1.5px solid rgba(255, 215, 0, 0.85) !important; /* gold outline */
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.35),
+    0 0 14px rgba(255, 215, 0, 0.25),
+    0 0 28px rgba(255, 215, 0, 0.15) !important;
 
+  background: linear-gradient(
+    180deg,
+    rgba(255, 215, 0, 0.08),
+    rgba(255, 215, 0, 0.02)
+  ) !important;
 
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600;
+}
+
+/* Slightly stronger glow on hover */
+.pill-premium:hover{
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.6),
+    0 0 18px rgba(255, 215, 0, 0.35),
+    0 0 40px rgba(255, 215, 0, 0.25) !important;
+}
+
+.pill-premium{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 
 
 
@@ -858,6 +888,7 @@ img {
   
 </body>
 </html>
+
 
 
 
