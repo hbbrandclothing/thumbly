@@ -436,7 +436,8 @@
         class="btn btn-primary"
         href="mailto:Thumbly_Offical@hotmail.com?subject=Subscription%20Thumbnail%20Request&body=Name:%20%0D%0ASubscription%20email:%20%0D%0AVideo%20title/topic:%20%0D%0AStyle%20notes:%20%0D%0AAssets%20links:%20%0D%0A"
       >
-        Email us for a new thumbnail →
+       👑 Email us for a new thumbnail →
+
       </a>
       <p class="subscriber-support__hint">
         Use the button above — it’ll open your email app with the correct template.
@@ -797,6 +798,42 @@ img {
   gap: 6px;
 }
 
+  /* Space out the helper text under the Email button */
+.subscriber-support_cta p{
+  margin-top: 14px; /* increase if you want more space */
+  opacity: 0.8;
+}
+
+  /* Premium Email Us button (gold crown + glow) */
+.subscriber-support_cta .btn{
+  border: 1.5px solid rgba(255, 215, 0, 0.85) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.35),
+    0 0 16px rgba(255, 215, 0, 0.25),
+    0 0 32px rgba(255, 215, 0, 0.15) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.18),
+    rgba(255, 215, 0, 0.05)
+  ) !important;
+
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover glow boost */
+.subscriber-support_cta .btn:hover{
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.7),
+    0 0 22px rgba(255, 215, 0, 0.45),
+    0 0 44px rgba(255, 215, 0, 0.3) !important;
+}
+
+  
+
 
 
 </style>
@@ -888,6 +925,7 @@ img {
   
 </body>
 </html>
+
 
 
 
