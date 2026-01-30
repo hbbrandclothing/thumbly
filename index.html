@@ -832,6 +832,38 @@ img {
     0 0 44px rgba(255, 215, 0, 0.3) !important;
 }
 
+
+  /* Move helper text under the Email button further down */
+.subscriber-support_cta .card-subtitle,
+.subscriber-support_cta small,
+.subscriber-support_cta p {
+  margin-top: 18px !important;
+}
+
+/* FORCE premium gold outline on Email button */
+.subscriber-support_cta .btn{
+  border: 2px solid #FFD700 !important; /* real gold */
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.6),
+    0 0 18px rgba(255, 215, 0, 0.35),
+    0 0 36px rgba(255, 215, 0, 0.2) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.22),
+    rgba(255, 215, 0, 0.06)
+  ) !important;
+
+  font-weight: 700;
+}
+
+/* Stronger glow on hover */
+.subscriber-support_cta .btn:hover{
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.85),
+    0 0 26px rgba(255, 215, 0, 0.55),
+    0 0 48px rgba(255, 215, 0, 0.35) !important;
+}
   
 
 
@@ -925,6 +957,7 @@ img {
   
 </body>
 </html>
+
 
 
 
