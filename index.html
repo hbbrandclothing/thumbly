@@ -614,6 +614,53 @@ header.nav .logo{
   flex: 0 0 auto !important;
 }
 
+  
+/* ===== NAV HARD RESET (size + layout) ===== */
+header.nav{
+  /* shape/size */
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 18px auto 0 !important;
+  padding: 12px 18px !important;   /* makes it less tall */
+  height: auto !important;
+  min-height: 0 !important;
+
+  /* layout */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+
+  /* visual */
+  border-radius: 28px !important;
+  overflow: hidden !important;
+}
+
+/* keep logo + right side aligned */
+header.nav .logo{
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+}
+
+/* put pills + buttons in a row, inside the bar */
+header.nav .navlinks{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+}
+
+/* stop your buttons becoming full-width bars */
+header.nav .btn,
+header.nav .pill{
+  width: auto !important;
+  display: inline-flex !important;
+  white-space: nowrap !important;
+}
+
 
 </style>
 
@@ -682,6 +729,7 @@ header.nav .logo{
   </div>
 </body>
 </html>
+
 
 
 
