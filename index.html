@@ -411,6 +411,156 @@
         </div>
       </div>
     </section>
+    <!-- SUBSCRIBER EMAIL US SECTION -->
+<section class="card subscriber-support" aria-labelledby="subscriber-support-title">
+  <div class="subscriber-support__inner">
+    <div class="subscriber-support__content">
+      <h3 id="subscriber-support-title" class="card-title">Email us (Subscribers)</h3>
+      <p class="card-subtitle">
+        This section is <strong>only for active subscription holders</strong> who want a new thumbnail.
+        To help us locate your account quickly, please include:
+        <strong>your name</strong> and the <strong>email your subscription is under</strong>.
+      </p>
+
+      <ul class="subscriber-support__list">
+        <li><strong>Name</strong> (the name you want us to use)</li>
+        <li><strong>Subscription email</strong> (the email used for your subscription)</li>
+        <li><strong>Video title / topic</strong> + any notes (style, vibe, text you want on the thumbnail)</li>
+        <li><strong>Assets</strong> (links to images/logos if needed)</li>
+      </ul>
+    </div>
+
+    <!-- Option A: Mailto (no backend needed) -->
+    <div class="subscriber-support__cta">
+      <a
+        class="btn btn-primary"
+        href="mailto:hello@yourdomain.com?subject=Subscription%20Thumbnail%20Request&body=Name:%20%0D%0ASubscription%20email:%20%0D%0AVideo%20title/topic:%20%0D%0AStyle%20notes:%20%0D%0AAssets%20links:%20%0D%0A"
+      >
+        Email us for a new thumbnail →
+      </a>
+      <p class="subscriber-support__hint">
+        Use the button above — it’ll open your email app with the correct template.
+      </p>
+
+      <!-- Option B (optional): On-page form UI (requires your own form handler) -->
+      <!--
+      <form class="subscriber-support__form" action="/api/subscriber-thumbnail-request" method="POST">
+        <label class="field">
+          <span>Your name</span>
+          <input type="text" name="name" placeholder="e.g. Jamie Smith" required />
+        </label>
+
+        <label class="field">
+          <span>Subscription email</span>
+          <input type="email" name="subscription_email" placeholder="e.g. jamie@email.com" required />
+        </label>
+
+        <label class="field">
+          <span>What do you need?</span>
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Video title/topic, style notes, text on thumbnail, links to assets..."
+            required
+          ></textarea>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Send request →</button>
+        <p class="subscriber-support__hint">
+          This form is for subscribers only. Make sure the subscription email is correct.
+        </p>
+      </form>
+      -->
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Minimal styling to match a dark, modern “card” UI */
+  .subscriber-support.card{
+    margin-top: 20px;
+    border-radius: 18px;
+    padding: 18px;
+    background: rgba(18, 22, 40, 0.55);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+  }
+  .subscriber-support__inner{
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .card-title{
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.92);
+  }
+  .card-subtitle{
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.72);
+  }
+  .subscriber-support__list{
+    margin: 0;
+    padding-left: 18px;
+    color: rgba(255,255,255,0.72);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .subscriber-support__cta{
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(10, 14, 28, 0.55);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.10);
+    transition: transform 0.08s ease, opacity 0.15s ease;
+  }
+  .btn:active{ transform: translateY(1px); }
+  .btn-primary{
+    color: #0b0d16;
+    background: linear-gradient(90deg, rgba(142, 97, 255, 1), rgba(72, 187, 255, 1));
+  }
+  .subscriber-support__hint{
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.4;
+  }
+
+  /* Optional form styling if you enable Option B */
+  .subscriber-support__form{ margin-top: 12px; display: grid; gap: 10px; }
+  .field span{ display:block; font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
+  .field input, .field textarea{
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(6, 10, 20, 0.55);
+    color: rgba(255,255,255,0.9);
+    padding: 10px 10px;
+    outline: none;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color: rgba(255,255,255,0.35); }
+
+  @media (max-width: 900px){
+    .subscriber-support__inner{ grid-template-columns: 1fr; }
+  }
+</style>
+
 
     <section id="store" class="card" style="margin-top:18px">
  <div class="thumbMock" style="aspect-ratio: 16/10; overflow:hidden;">
@@ -476,6 +626,7 @@
   </div>
 </body>
 </html>
+
 
 
 
