@@ -574,6 +574,47 @@
   border-radius: 22px; /* less round */
 }
 
+  /* --- NAV FIX: put everything back inside the rounded header --- */
+header.nav{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 18px auto 0 !important;
+
+  padding: 14px 18px !important;     /* controls height */
+  height: auto !important;            /* prevents giant empty capsule */
+  border-radius: 28px !important;     /* less round */
+}
+
+/* Make the right-side items sit in a row and stay INSIDE the capsule */
+header.nav .navlinks{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin: 0 !important;
+}
+
+/* Stop buttons becoming full-width bars */
+header.nav .btn{
+  width: auto !important;
+  display: inline-flex !important;
+  white-space: nowrap !important;
+}
+
+/* Keep logo from forcing weird spacing */
+header.nav .logo{
+  display: inline-flex !important;
+  align-items: center !important;
+  flex: 0 0 auto !important;
+}
+
+
 </style>
 
 
@@ -641,6 +682,7 @@
   </div>
 </body>
 </html>
+
 
 
 
