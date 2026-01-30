@@ -749,6 +749,19 @@ img {
   height: auto;
 }
 
+  /* --- Fix the massive thumbnail section under Email us --- */
+.subscriber-support + section img,
+.subscriber-support + .card img,
+.subscriber-support + .grid img,
+.subscriber-support + * img {
+  width: 100% !important;
+  max-height: 420px !important;   /* change this number to make it smaller/bigger */
+  object-fit: contain !important;
+  height: auto !important;
+  display: block !important;
+}
+
+
 
 
 
@@ -823,6 +836,7 @@ img {
   </div>
 </body>
 </html>
+
 
 
 
