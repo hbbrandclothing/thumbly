@@ -906,6 +906,46 @@ img {
   border-radius: 999px !important;
 }
 
+
+
+/* === PREMIUM GOLD STYLE for the Email button (matches premium pill) === */
+/* targets BOTH: subscriber-support__cta and subscriber-support_cta */
+.subscriber-support__cta .btn,
+.subscriber-support_cta .btn,
+.subscriber-support__cta a.btn,
+.subscriber-support_cta a.btn{
+  border: 2px solid #FFD700 !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.65),
+    0 0 18px rgba(255, 215, 0, 0.45),
+    0 0 36px rgba(255, 215, 0, 0.30) !important;
+
+  /* force background even if .btn-primary is overriding */
+  background-color: rgba(255, 215, 0, 0.10) !important;
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.22),
+    rgba(255, 215, 0, 0.06)
+  ) !important;
+
+  color: rgba(255,255,255,0.96) !important;
+  font-weight: 700 !important;
+}
+
+.subscriber-support__cta .btn:hover,
+.subscriber-support_cta .btn:hover{
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.95),
+    0 0 26px rgba(255, 215, 0, 0.65),
+    0 0 52px rgba(255, 215, 0, 0.45) !important;
+}
+
+
+.subscriber-support__cta{
+  overflow: visible !important;
+  padding: 14px !important; /* gives the border room to show */
+}
+
   
 
 </style>
@@ -997,6 +1037,7 @@ img {
   
 </body>
 </html>
+
 
 
 
