@@ -355,7 +355,12 @@
    rel="noopener">
    Buy now — £4.99
 </a>
-
+<a class="btn btn-secondary"
+   href="https://buy.stripe.com/14A7sFdTFgXt3Hg857bV601"
+   target="_blank" rel="noopener">
+  Subscribe — £18.99 / month
+</a>
+            
           </div>
           <div class="fine">
             Buy uses Stripe Checkout (if you’ve set your Stripe key). “Test purchase” works without Stripe.
@@ -961,7 +966,16 @@ img {
   padding-bottom: 8px;
 }
 
+@media (max-width: 640px){
+  header.nav .btn,
+  header.nav .btn-secondary{
+    width: 100%;
+    justify-content: center;
+  }
+}
 
+
+  
 
 </style>
 
@@ -1052,6 +1066,7 @@ img {
   
 </body>
 </html>
+
 
 
 
